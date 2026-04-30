@@ -1,9 +1,9 @@
 package minecraft
 
 import (
+	"github.com/UselessMnemonic/proxygw-minecraft/frontends"
 	"github.com/UselessMnemonic/proxygw/pkg/engine"
 	"github.com/UselessMnemonic/proxygw/plugin"
-	"github.com/UselessMnemonic/proxygw/plugins/minecraft/frontends"
 )
 
 func init() {
