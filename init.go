@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	plugin.Register("minecraft", plugin.Handler{
+	plugin.Register("github.com/UselessMnemonic/proxygw-minecraft", plugin.Handler{
 		OnLoad: func(_ map[string]any, _ *engine.Engine, namespace *plugin.Namespace) error {
 			namespace.Frontends["server"] = frontends.NewServerHandler
 			namespace.Frontends["status"] = frontends.NewStatusHandler
