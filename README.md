@@ -76,13 +76,12 @@ frontends:
     flow_timeout: 30s
     target: minecraft:game
     options:
-      message: "Server is starting, please reconnect in a moment."
-      status: "Server is sleeping"
+      login: "Server is starting, please reconnect in a moment."
+      motd: "Server is sleeping"
 ```
 
 Options:
 
-- `message`: optional login disconnect text. Defaults to
-  `Server is starting, please try again soon.`
-- `status`: optional server-list description text when this frontend receives a
-  status ping. Defaults to `Proxy Gateway`.
+- `login`: optional login disconnect text.
+- `motd`: optional server-list description text when this frontend receives a
+  status ping.
