@@ -211,6 +211,6 @@ func NewServerHandler(name string, protocol config.Protocol, address netip.AddrP
 		login:   login,
 		motd:    motd,
 		warm:    make(chan struct{}),
-		logger:  slog.Default().With("component", "handler", "frontend", name),
+		logger:  slog.Default().With("handler", "server", "frontend", name),
 	}, nil
 }
