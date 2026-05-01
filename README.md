@@ -35,33 +35,9 @@ namespace, so frontend kinds are referenced as `minecraft:...`.
 
 Frontends:
 
-- `status`: answers Minecraft server-list status pings and never emits
-  warm signals.
-- `server`: emits a warm signal when a client connects, sends a configurable
-  disconnect message, and closes the connection.
+- `server`: handles Minecraft client connections for status and wake-up flows.
 
 There is no plugin-level configuration for this plugin.
-
-## status Frontend
-
-Example:
-
-```yaml
-frontends:
-  - name: minecraft-status
-    kind: minecraft:status
-    protocol: tcp
-    listen: 0.0.0.0:25565
-    flow_timeout: 30s
-    target: minecraft:game
-    options:
-      status: "Server is sleeping"
-```
-
-Options:
-
-- `status`: optional server-list description text. Defaults to
-  `Proxy Gateway`.
 
 ## server Frontend
 
@@ -72,7 +48,7 @@ frontends:
   - name: minecraft-server
     kind: minecraft:server
     protocol: tcp
-    listen: 0.0.0.0:25566
+    listen: 0.0.0.0:25565
     flow_timeout: 30s
     target: minecraft:game
     options:
@@ -83,5 +59,4 @@ frontends:
 Options:
 
 - `login`: optional login disconnect text.
-- `motd`: optional server-list description text when this frontend receives a
-  status ping.
+- `motd`: optional MOTD text.
